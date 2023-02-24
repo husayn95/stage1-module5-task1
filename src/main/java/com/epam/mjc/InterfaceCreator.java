@@ -43,11 +43,10 @@ public class InterfaceCreator {
         arrayList2.addAll(arrayList1);
         System.out.println(arrayList2);
 
-        List list3 = Stream.of(arrayList,arrayList1).flatMap(x -> x.stream()).collect(Collectors.toList());
+        List<Integer> list3 = Stream.of(arrayList,arrayList1).flatMap(x -> x.stream()).collect(Collectors.toList());
 
         System.out.println(list3);
-        return (arrayList, arrayList1, list3);
-        //throw new UnsupportedOperationException("You should implement this method.");
+         return (list1, list2) ->  list3;        //throw new UnsupportedOperationException("You should implement this method.");
     };
 
     public static void main(String[] args) {
