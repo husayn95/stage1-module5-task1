@@ -46,8 +46,9 @@ public class InterfaceCreator {
         List list3 = Stream.of(arrayList,arrayList1).flatMap(x -> x.stream()).collect(Collectors.toList());
 
         System.out.println(list3);
-        throw new UnsupportedOperationException("You should implement this method.");
-    }
+        return (arrayList, arrayList1, list3);
+        //throw new UnsupportedOperationException("You should implement this method.");
+    };
 
     public static void main(String[] args) {
         System.out.println("hello");
