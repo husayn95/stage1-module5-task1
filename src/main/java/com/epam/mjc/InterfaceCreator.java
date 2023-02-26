@@ -13,13 +13,19 @@ import java.util.stream.Stream;
 
 public class InterfaceCreator {
 
-    public Predicate<List<String>> isValuesStartWithUpperCase() {
+    //Implement the program which return Predicate<List<String>>. Predicate should check all values
+    // of the list and return true if all of them start with letter in upper case only.
+    public static Predicate<List<String>> isValuesStartWithUpperCase()  {
+        String s = "";
+        return list -> list.stream().allMatch(s1 -> Character.isUpperCase(s1.charAt(0)));
+        // return list -> list.stream().anyMatch((i) -> Character.isUpperCase(i.charAt(0)));
 
-        throw new UnsupportedOperationException("You should implement this method.");
+       // throw new UnsupportedOperationException("You should implement this method.");
     }
 
     public Consumer<List<Integer>> addEvenValuesAtTheEnd() {
         throw new UnsupportedOperationException("You should implement this method.");
+       // return list -> System.out.println(list + list.stream().flatMap(x))
     }
 
     public Supplier<List<String>> filterCollection(List<String> values) {
@@ -56,10 +62,15 @@ public class InterfaceCreator {
         System.out.println("hello");
         List<Integer> list = new ArrayList<>();
         List<Integer> list1 = new ArrayList<>();
+        List<String>  stringList = new ArrayList<>();
         list.add(1);
         list.add(2);
         list1.add(3);
         list1.add(4);
+        stringList.add("as");
+        stringList.add("gsdf");
+        stringList.add("ASSsd");
+        System.out.println(isValuesStartWithUpperCase().test(stringList));
 
         ArrayList arrayList = new ArrayList<>();
         ArrayList arrayList1 = new ArrayList<>();
