@@ -16,22 +16,30 @@ public class InterfaceCreator {
     //Implement the program which return Predicate<List<String>>. Predicate should check all values
     // of the list and return true if all of them start with letter in upper case only.
     public static Predicate<List<String>> isValuesStartWithUpperCase()  {
-        String s = "";
+        //String s = "";
         return list -> list.stream().allMatch(s1 -> Character.isUpperCase(s1.charAt(0)));
+
         // return list -> list.stream().anyMatch((i) -> Character.isUpperCase(i.charAt(0)));
 
        // throw new UnsupportedOperationException("You should implement this method.");
     }
 
-    public Consumer<List<Integer>> addEvenValuesAtTheEnd() {
-        throw new UnsupportedOperationException("You should implement this method.");
+    public static Consumer<List<Integer>> addEvenValuesAtTheEnd() {
+        //throw new UnsupportedOperationException("You should implement this method.");
        // return list -> System.out.println(list + list.stream().flatMap(x))
+        return list -> System.out.println(Stream.of(list,list.stream().allMatch(x -> x % 2 == 0)).collect(Collectors.toList()));
+        //System.out.println("gh");
     }
+
+
 
     public Supplier<List<String>> filterCollection(List<String> values) {
         throw new UnsupportedOperationException("You should implement this method.");
     }
 
+
+    //Implement the program which return Function<List<String>, Map<String, Integer>>. Function should
+    // create a map where key is a value of the list and the value is size of the key.
     public Function<List<String>, Map<String, Integer>> stringSize() {
 
         throw new UnsupportedOperationException("You should implement this method.");
@@ -65,12 +73,17 @@ public class InterfaceCreator {
         List<String>  stringList = new ArrayList<>();
         list.add(1);
         list.add(2);
+        list.add(4);
+        list.add(6);
+        list.add(3);
         list1.add(3);
         list1.add(4);
         stringList.add("as");
         stringList.add("gsdf");
         stringList.add("ASSsd");
         System.out.println(isValuesStartWithUpperCase().test(stringList));
+
+        addEvenValuesAtTheEnd().accept(list);
 
         ArrayList arrayList = new ArrayList<>();
         ArrayList arrayList1 = new ArrayList<>();
